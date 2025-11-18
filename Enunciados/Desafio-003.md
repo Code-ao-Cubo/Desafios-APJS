@@ -1,7 +1,7 @@
 # Desafio 3 — Filtrando Produtos Vencidos
 
 Um supermercado mantém uma lista de produtos, cada um com sua data de validade.  
-Dada a lista de datas e a data atual, **retorne apenas os itens vencidos**.
+Dada a lista de produtos e a data atual, **retorne apenas os itens vencidos**.
 
 ## Entrada
 - Uma lista de itens no formato
@@ -31,3 +31,4 @@ Saída:
 ```javascript
 ["Arroz"]
 ```
+
