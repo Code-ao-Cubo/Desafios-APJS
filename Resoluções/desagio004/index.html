@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de viagens</title>
+</head>
+<body>
+    <h1>Gerenciador de viagens</h1>
+    <form id="formViagem">
+        <label for="numPassageiros">Nº passageiros:</label>
+        <input type="number" id="numPassageiros">
+        <button type="submit">Criar viagem</button>
+    </form>
+
+    <h3>Cadastrar passageiros</h3>
+    <form id="formPassageiro">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" placeholder="Digite o nome:">
+        <label for="numAssento">Nº assento:</label>
+        <input type="number" id="numAssento" placeholder="Digite o número">
+        <button type="submit">Cadastrar</button>
+    </form>
+    <h3 id="tituloNumAssentos">Nº de assentos livres:</h3>
+    
+    <script src="./script.js"></script>
+</body>
+</html>
