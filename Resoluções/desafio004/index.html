@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerenciador de viagens</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
     <h1>Gerenciador de viagens</h1>
@@ -12,6 +13,10 @@
         <input type="number" id="numPassageiros">
         <button type="submit">Criar viagem</button>
     </form>
+    
+    <div id="progresso" >
+        <div id="barra"></div>
+    </div>
 
     <h3>Cadastrar passageiros</h3>
     <form id="formPassageiro">
@@ -22,7 +27,20 @@
         <button type="submit">Cadastrar</button>
     </form>
     <h3 id="tituloNumAssentos">Nº de assentos livres:</h3>
-    
+
+    <div id="assentos"></div>
+
+    <h3>Lista de passageiros</h3>
+    <table id="tabelaPassageiros">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Assento</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
     <script src="./script.js"></script>
 </body>
 </html>

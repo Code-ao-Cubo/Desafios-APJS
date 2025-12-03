@@ -5,8 +5,8 @@ let contadorPassageiros = 0
 document.getElementById("formViagem").addEventListener("submit", function (evento) {
     evento.preventDefault()
     criarViagem()
+    mostrarAssentos()
 })
-
 
 function criarViagem() {
     let inputPassageiros = document.getElementById("numPassageiros").value
@@ -32,6 +32,9 @@ function criarViagem() {
 document.getElementById("formPassageiro").addEventListener("submit", function (evento){
     evento.preventDefault()
     adicionarPassageiro()
+    mostrarTabelaPassageiros()
+    mostrarAssentos()
+    mostrarBarraProgresso()
 })
 
 function adicionarPassageiro(){
@@ -54,5 +57,39 @@ function adicionarPassageiro(){
 
     // limpar os inputs 
     document.getElementById("nome").value = null
-     document.getElementById("numAssento").value = null
+    document.getElementById("numAssento").value = null
+}
+
+function mostrarTabelaPassageiros(){
+    const tbody = document.querySelector("#tabelaPassageiros tbody")
+    tbody.innerHTML = ""
+
+    listaAssentos.map((nome, posicao) => {
+        if(nome){
+            const tr = document.createElement("tr")
+            // tr.innerHTML = "<td>" + nome + "</td>" + "<td>" + Number(posicao + 1) + "</td>"
+            tr.innerHTML = `<td>${nome}</td><td>${Number(posicao + 1)}</td>`
+            tbody.appendChild(tr)
+        }
+    })
+}
+
+function mostrarAssentos(){
+    const divAssentos = document.getElementById("assentos")
+    divAssentos.innerHTML = "";
+
+    listaAssentos.map((nome, posicao) => {
+        const cardAssento = document.createElement("div")
+        cardAssento.className = `cardAssento ${nome ? 'ocupado' : ''}`
+        cardAssento.innerText = posicao + 1
+        divAssentos.appendChild(cardAssento)
+    })
+}
+
+function mostrarBarraProgresso(){
+    debugger
+    const ocupados = listaAssentos.filter(assento => assento != null)
+    const porcentagem = ocupados.length / numPassageiros * 100
+
+    document.getElementById("barra").style.width = porcentagem + "%"
 }
